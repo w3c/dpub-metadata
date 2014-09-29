@@ -102,7 +102,7 @@
             table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
 
             /* for commenting */
-              aside {  
+              aside.comment {  
                 width: 15em;  
                 float: right;  
                 color: black;  
@@ -121,12 +121,7 @@
                 border-left-color: Orchid;
               }
 
-              aside.example {
-                width: 100%;
-                float: none;
-              }
-
-              aside > p:first-child:before {  
+              aside.comment > p:first-child:before {  
                 content: "COMMENTS: ";
               }
 
@@ -362,7 +357,7 @@
                     <p>
                         What’s needed is some combination of bibliographic ontology and relations.
                     </p>
-                    <aside>The Wiki page referred to "BibEx" group, but I suppose that was a mistake, changed it to the bib extend Community group…</aside>
+                    <aside class="comment">The Wiki page referred to "BibEx" group, but I suppose that was a mistake, changed it to the bib extend Community group…</aside>
                     <p>
                         May need different types for selling books vs. finding them. Library schemes (e.g., <a href="http://www.w3.org/community/schemabibex/">Bib Extend Community Group</a>) primarily focus on libraries, which have properties like “holdings” and “checking out a book” that are irrelevant to publishers.
                     </p>
