@@ -6,22 +6,18 @@
         </title>
         <meta charset='utf-8'>
         <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async="" class='remove'></script>
+        <script class="remove">
+          var postProc = {
+            apply: function(c) {
+              var backlink = $("<span> — <a href='interviews.html' class='toxref' style='text-decoration:none !important'>Interviews →</a></span>").appendTo("#h2_toc");
+            }
+          }
+        </script>
+
         <script class='remove'>
         var respecConfig = {
-          localBiblio: {
-            "dpub-metadata-interviews": {
-                "authors": [
-                  "Bill Kasdorf",
-                  "Madi Solomon",
-                  "Ivan Herman"
-                ],
-                "title": "DPUB IG Metadata Task Force Interviews",
-                "href" : "http://w3c.github.io/dpub-metadata/interviews.html",
-                "rawDate": "2014-10-01",
-                "status" : "ED",
-                "publisher": "W3C"
-            },
-          },
+          postProcess : [ postProc ],
+          doRdfa: true,
           specStatus: "ED",
           shortName:  "dpub-metadata",
           editors: [
@@ -252,7 +248,7 @@
                 Background: Interviews
             </h2>
             <p>
-                In order to assess the “pain points” with regard to metadata for publishers, the co-leaders of the task force, Madi Solomon of Pearson and Bill Kasdorf of Apex, conducted a number of interviews in 2014 with publishers, service providers, and representatives from related organizations. The inverviews themeselves are available in a separate document&nbsp;[[dpub-metadata-interviews]].
+                In order to assess the “pain points” with regard to metadata for publishers, the co-leaders of the task force, Madi Solomon of Pearson and Bill Kasdorf of Apex, conducted a number of interviews in 2014 with publishers, service providers, and representatives from related organizations. The inverviews themeselves are available in a <a href="interviews.html">separate document</a>.
             </p>
             <p>
                 The interviewees were selected to provide insight from a variety of perspectives, and were individuals known to the interviewers to be knowledgeable and authoritative within their spheres. Ms. Solomon took a “vertical” approach, interviewing a broad range of individuals within Pearson, a large global educational publisher. Mr. Kasdorf took a “horizontal” approach, interviewing experts from diverse types of publishing (book, journal, magazine, and news) and representing diverse roles within the digital publishing ecosystem (publishers, metadata service providers, consultants, and representatives from other organizations that are addressing the issue of metadata in publishing).
@@ -318,7 +314,7 @@
                   <li>And Now for Something Completely Different: News</li>
               </ul>
               <p>
-                  Please see the <a href="https://www.w3.org/dpub/IG/wiki/Task_Forces/Metadata#Phase_1_Strategy">summary in the appendix</a> for a discussion of these themes, including important comments by members of the DPIG.
+                  Please see the <a href="https://www.w3.org/dpub/IG/wiki/Task_Forces/Metadata#Phase_1_Strategy">summary on the group’s wiki page</a> for a discussion of these themes, including important comments by members of the DPIG.
               </p>
               <p>
                   The key themes of the interviews conducted by Ms. Solomon are summarized as follows:
@@ -336,7 +332,7 @@
                   <li>More Education and Guidance</li>
               </ul>
               <p>
-                  Please see Ms. Solomon’s report in the interview document&nbsp;[[dpub-metadata-interviews]] for a more detailed discussion of these themes.
+                  Please see Ms. Solomon’s report in the <a href="interviews.html#vertical">interview document</a> for a more detailed discussion of these themes.
               </p>
           </section>
         </section>

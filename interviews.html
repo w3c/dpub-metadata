@@ -6,22 +6,18 @@
         </title>
         <meta charset='utf-8'>
         <script src='http://www.w3.org/Tools/respec/respec-w3c-common' async="" class='remove'></script>
+        <script class="remove">
+          var postProc = {
+            apply: function(c) {
+              var backlink = $("<span><a href='.' class='toxref' style='text-decoration:none !important'>← Report</a> — </span>").prependTo("#h2_toc");
+            }
+          }
+        </script>
+
         <script class='remove'>
         var respecConfig = {
-          localBiblio: {
-            "dpub-metadata": {
-                "authors": [
-                  "Bill Kasdorf",
-                  "Madi Solomon",
-                  "Ivan Herman"
-                ],
-                "title": "DPUB IG Metadata Task Force Report",
-                "href" : "http://w3c.github.io/dpub-metadata/",
-                "rawDate": "2014-10-01",
-                "status" : "ED",
-                "publisher": "W3C"
-            },
-          },
+          postProcess : [ postProc ],
+          doRdfa: true,
           specStatus: "ED",
           shortName:  "dpub-metadata-interviews",
           editors: [
@@ -147,6 +143,13 @@
                 background: hsl(129, 100%, 74%);;
               }
               li { margin-bottom: 0.5em;}
+
+
+              div.head dl,
+              div.head p,
+              section#abstract,
+              section#sotd
+              { display: none;}
         </style>
     </head>
     <body>
@@ -165,7 +168,7 @@
                 Introduction
             </h2>
             <p>
-                In order to assess the “pain points” with regard to metadata for publishers, the co-leaders of the Metadata Task Force, Madi Solomon of Pearson and Bill Kasdorf of Apex, conducted a number of interviews in 2014 with publishers, service providers, and representatives from related organizations. This document contains the notes of the inverviews, and serves as the basis of the DPUB IG Metadata Task Force Report&nbsp;[[dpub-metadata]]. 
+                In order to assess the “pain points” with regard to metadata for publishers, the co-leaders of the Metadata Task Force, Madi Solomon of Pearson and Bill Kasdorf of Apex, conducted a number of interviews in 2014 with publishers, service providers, and representatives from related organizations. This document contains the notes of the inverviews, and serves as the basis of the <a href=".">DPUB IG Metadata Task Force Report</a>. 
             </p>
             <p>
                 The interviewees were selected to provide insight from a variety of perspectives, and were individuals known to the interviewers to be knowledgeable and authoritative within their spheres. Ms. Solomon took a “vertical” approach, interviewing a broad range of individuals within Pearson, a large global educational publisher. Mr. Kasdorf took a “horizontal” approach, interviewing experts from diverse types of publishing (book, journal, magazine, and news) and representing diverse roles within the digital publishing ecosystem (publishers, metadata service providers, consultants, and representatives from other organizations that are addressing the issue of metadata in publishing).
