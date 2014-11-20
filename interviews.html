@@ -46,6 +46,7 @@
           previousMaturity:     "",
           previousPublishDate:  "",
           previousURI:          "",
+          //publishDate:          "2014-12-31",
           edDraftURI:           "http://w3c.github.io/dpub-metadata/interviews.html",
           wg:                   "Digital Publishing Interest Group",
           wgURI:                "http://www.w3.org/dpub/IG/",
@@ -110,6 +111,14 @@
 
             table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
             table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+            blockquote {
+                font-style: italic;
+            }
+
+            .shout {
+                text-transform: uppercase;
+            }
 
             /* for commenting */
               aside.comment {  
@@ -1039,6 +1048,97 @@
                 <p>
                     Finally, he also pointed out that there is an inherent conflict between the needs of archivists/cataloguers and marketers/publishers [alluded to above in discussing the library vs. publisher pov on things like what “a work” is].
                 </p>
+            </section>
+
+            <section>
+                <h2 id="henning-schoenenberger">Henning Schoenenberger, Director, Product Data and Metadata, Springer</h2>
+
+                <p>
+                    Henning is responsible for metadata globally for <a href="http://www.springer.com">Springer</a>, one of the world’s largest and oldest <a>STM</a> publishers. Springer has long been an innovator in the digital arena, pioneering the use of SGML and XML, publishing journals online, embracing open access, and—most notably in the context of this initiative—digitizing their enormous backlist of some 100,000+ books in a broad range of disciplines in their SpringerLink platform.
+                </p>
+                <p>
+                    Because his work focuses almost entirely on metadata for a publishing program that encompasses many thousands of books and journals with decades of legacy content, Henning has an uncommon perspective and depth of knowledge in this area.
+                </p>
+                <p>
+                    He has a very comprehensive and forward-looking view of metadata. He pushed back on the focus on “pain points” by saying that he doesn’t consider metadata to be a problem statement; rather, “it’s a central aspect of what you do as a publisher.” One of my favorite quotes from the interview:
+                </p>
+                <blockquote>
+                    “Metadata is not to be solved, it’s to be saved.”
+                </blockquote>
+                <p>
+                    If a publisher invests in metadata activities (e.g., <a>CrossRef</a>), it is likely to pay off. His philosophy is to “be as transparent with metadata as possible, flood the market with it, across the world. Same with Linked Open Data and the Semantic Web.” This is not just idealism, it is practical: “This will all benefit Springer in the long run.”
+                </p>
+                <p>
+                    Metadata should be considered an ongoing issue, and should be understood to be always evolving. The development of the <a>DOI</a> and <a>CrossRef</a> was only one part of the picture, one aspect of the ecosystem. That is working well for what it was originally designed to do, but now it has evolved to include <a>FundRef</a>, which is an issue that publishers must now deal with, incorporate into their systems and workflows and publications.
+                </p>
+                <p>
+                    Especially from an <a>STM</a> publisher’s standpoint, you must have very good metadata to position yourself properly in the marketplace and in the scientific/scholarly dialogue.
+                </p>
+                <p>
+                    An example of how significantly the landscape changes: right now, research data is considered “an appendage” to a publication. But who knows to what extent it may become core of <a>STM</a> publishing? Currently, “research data is a mess: there are hundreds of different formats out there.” You can’t always know where things will go, and when. The lesson is that you need to capture and maintain all possible metadata, even if it may not have a demonstrable payback right now: you will almost surely need it in the long run.
+                </p>
+                <p>
+                    As an example of how this philosophy and strategy paid off, Springer needed to act fast to implement <a>ONIX-PC</a>, the subscription format of <a>ONIX</a> . Because they had such good metadata, they were able to implement it on a very large scale in only three months: “It turned out to be quite simple, we needed some IT and some project management and a converter and we were done.” Other publishers struggle with this because they lack the necessary metadata.
+                </p>
+                <p>
+                    On the subject of <a>ONIX-PC</a>, he said that at the <a>ICEDIS</a> meeting at Frankfurt, he advocated renaming the “PC” suffix from the current meaning of “Price Catalog” to “Product Catalog.” He wants it to cover Open Access, hybrid products and packages, which it currently can’t accommodate. He also wants to be able to use it to communicate with the <a>ISSN</a> catalog, etc.
+                </p>
+                <p>
+                    This brought up another important general issue:
+                </p>
+                <blockquote>
+                    “Metadata in the past was tailored to two different markets, trade and library. <span class="shout">This cannot continue</span>.”
+                </blockquote>
+                <p>
+                    Concerning metadata these worlds are coming together rapidly. The separation in their metadata models and management systems—how they express subject classifications, the identifiers they use, how they handle linked open data, the fact that they are typically managed by separate teams, and have separate business models—all this needs to converge.
+                </p>
+                <blockquote>
+                    “Functionalities and formats (e.g., schema.org) need to cover library and trade under the same umbrella.”
+                </blockquote>
+                <p>
+                    Another huge issue he emphasized was interoperability.
+                </p>
+                <p>
+                    As an <a>STM</a> publisher, Springer has <a>MARC</a> records; in fact, they have both OCLC MARC records and their own MARC records. The Springer-flavored MARC records have URIs that lead back to the Springer repository, as well as three or four classification schemes, a full TOC, Dewey and Library of Congress classification, and proprietary metadata.
+                </p>
+                <p>
+                    The inconsistencies in <a>MARC</a> records is a problem; there must be reliable readability by different facilities. <a>BIBFRAME</a> is going in the right direction. But academic libraries often have limited budgets, and moving away from MARC is not trivial. “This is 80% of the story: it works okay; workarounds are common.” BIBFRAME needs to make the case for libraries for why it’s justified.
+                </p>
+                <p>
+                    He mentioned that he was approached to collaborate with schema.org to model serial and journal metadata. He recommends not reinventing the wheel or developing Yet Another Standard: “How ONIX-PC models serials is excellent. If schema.org is looking for a deep object model for serials data, they should look at ONIX-PC.”
+                </p>
+                <p>
+                    He pointed out that <a>EDItEUR</a> is based on a trade supply chain model and perspective, dominated by wholesalers. But these players are “only part of the story.” Publishers are increasing end-user sales that don’t involve the intermediaries for which the EDItEUR standards have been designed. ONIX is built for the current supply chain model; EDItEUR needs to move beyond this current focus.
+                </p>
+                <p>
+                    This is especially relevant for <a>STM</a> because STM publishers have the brand recognition and the capabilities to be able to sell direct. You can go to <a href="http://link.springer.com">SpringerLink</a> today and buy an article or even a book chapter.
+                </p>
+                <p>
+                    Finally, he placed a strong emphasis on rights: “Some still say ‘Metadata is a challenge’. But that is news from yesterday. The current challenge is Rights metadata.” A few technology companies provide decent rights modules. But there is no thoroughgoing interoperable rights standard. “This gives us a great opportunity to tie up loose ends and get it right.”
+                </p>
+                <p>
+                    He would very much welcome the W3C setting up a WG to work on rights, and making rights <em>Interoperable</em>. Publishers would appreciate this. He mentioned the enormous task that was involved in expanding SpringerLink to accommodate all of their books, which have been published over many decades.
+                </p>
+                <blockquote>
+                    <em>“Clear rights metadata is especially important now that everything is visible: once you publish something digitally, retractions are a complex matter. This can be life-or-death for a small publisher which hasn’t done its homework.”</em>
+                </blockquote>
+                <p>
+                    In an abundance of caution, although they did digitize the entire backlist going back to the late 18th century and comprising more than 100,000 books, Springer is highly scrupulous not making public any content for which it has not cleared the rights. This was an enormous project: it involved hundreds of thousands of contracts from which rights metadata had to be extracted. And these exist in various forms in various jurisdictions.
+                </p>
+                <p>
+                    In conclusion, what Henning characterized as “the Big Data promise”:
+                </p>
+                <ul>
+                    <li>Linked Open Data</li>
+                    <li>Named Entity Recognition</li>
+                    <li>Robust Identifiers</li>
+                </ul>
+                <p>
+                    With these, it would be possible to realize Henning’s vision:
+                </p>
+                <blockquote>
+                    “In a few years, robots will do research for you. Good metadata will make this possible.”
+                </blockquote>
             </section>
         </section>
         <section class="appendix">
