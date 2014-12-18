@@ -1,0 +1,176 @@
+<table class="zebra">
+<thead><tr><th title="Field #1">Category</th>
+<th title="Field #2" width="30%">Identifier</th>
+<th title="Field #4">URI/URN Example (if defined)</th>
+<th title="Field #5">Authority</th>
+<th title="Field #6">Action</th>
+</tr></thead>
+<tbody><tr><td>Creator/Contributor</td>
+<td>IPI—Interested Parties Information</td>
+<td> </td>
+<td><a href="http://www.cisac.org/">International Confederation of Societies of Authors and Composers (CISAC)</a></td>
+<td> </td>
+</tr>
+<tr><td>Creator/Contributor</td>
+<td>ISNI—International Standard Name Identifier</td>
+<td>http://isni.org/isni/0000000134596488</td>
+<td><a href="http://isni.org">ISNI Registration Authority, ISO</a>. Current Registries include Bowker and Ringgold</td>
+<td>Resolves to ISNI record</td>
+</tr>
+<tr><td>Creator/Contributor</td>
+<td>ORCID—Open Researcher and Contributor ID</td>
+<td>http://orcid.org/0000-0002-1825-0097</td>
+<td><a href="http://orcid.org">ORCID.org</a></td>
+<td>Resolves to ORCID servers; APIs for members</td>
+</tr>
+<tr><td>Creator/Contributor</td>
+<td>Digital Author ID (DAI)</td>
+<td> </td>
+<td>SURF - https://www.surf.nl/en</td>
+<td> </td>
+</tr>
+<tr><td>Creator/Contributor</td>
+<td>Lattes Platform </td>
+<td> </td>
+<td>Brazilian Government</td>
+<td> </td>
+</tr>
+<tr><td>Creator/Contributor</td>
+<td>Deutsche Biographie</td>
+<td>http://data.deutsche-biographie.de/sfz26859</td>
+<td>online version of Allgemeine Deutsche Biographie</td>
+<td>resolves to RDF description</td>
+</tr>
+<tr><td>Creator/Contributor</td>
+<td>CERL - Consortium of European Research Libraries</td>
+<td>http://thesaurus.cerl.org/record/cnp01379452</td>
+<td>CERL</td>
+<td>resolves to human HTML description (no RDFa); RDF serializations available.</td>
+</tr>
+<tr><td>Creator/Contributor</td>
+<td>VIAF - Virtual International Authority File</td>
+<td>http://viaf.org/viaf/10179357</td>
+<td>OCLC; aggregated from major national libraries</td>
+<td>HTML or RDF serialization (content negotiation?)</td>
+</tr>
+<tr><td>Work</td>
+<td>DOI - Digital Object Identifer</td>
+<td>http://dx.doi.org/10.1007/1-4020-4466-6</td>
+<td>International DOI Foundation registries</td>
+<td>Resolves to target,registerd digital object.</td>
+</tr>
+<tr><td>Work (not really)</td>
+<td>LoC - Library of Congress Control No. (LCCN)</td>
+<td>http://lccn.loc.gov/2003556443 http://lccn.loc.gov/sh2007001751 </td>
+<td>LoC</td>
+<td>Resolves to metadata, e.g., MARC or MODS/MADS record describing a book, online version of LC exhibit, subject heading.</td>
+</tr>
+<tr><td>Work</td>
+<td>RDA</td>
+<td>RDA - URIs</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr><td>Work</td>
+<td>ISRC - International Standard Recording Code</td>
+<td> </td>
+<td>International ISRC Agency, Federation of Phonographic Industry</td>
+<td> </td>
+</tr>
+<tr><td>Work</td>
+<td>ISTC - International Standard Text Code</td>
+<td> </td>
+<td>ISTC Agency</td>
+<td> </td>
+</tr>
+<tr><td>Product &amp; Unit</td>
+<td>EPC - Electronic Product Code</td>
+<td>urn:epc:id:sgtin:978817525.0766.999999999999</td>
+<td>EPC Global</td>
+<td> </td>
+</tr>
+<tr><td>Product &amp; Unit</td>
+<td>GTIN - Global Trade Item Number</td>
+<td> </td>
+<td>GS1 agencies</td>
+<td> </td>
+</tr>
+<tr><td>Product &amp; Unit</td>
+<td>ISBN - International Standard Book Number</td>
+<td> </td>
+<td>International ISBN Agencies</td>
+<td> </td>
+</tr>
+<tr><td>Product &amp; Unit</td>
+<td>ISMN - International Standard Music Number</td>
+<td> </td>
+<td>ISMN agencies, LOC</td>
+<td> </td>
+</tr>
+<tr><td>Product &amp; Unit</td>
+<td>ISSN - International Standards Serial Number</td>
+<td> </td>
+<td>National Serials Data Program of the LOC</td>
+<td> </td>
+</tr>
+<tr><td>Product &amp; Unit</td>
+<td>OCLC - Online Computer Library Center CN</td>
+<td>http://www.worldcat.org/oclc/816512986  http://catalog.hathitrust.org/Record/009567127</td>
+<td>OCLC (Library Community) -- assigned late, i.e., not until item on way to / reaches library</td>
+<td>Redirects (303) to description of bib manifestation serialized as HTML+RDFa, JSON-LD, Turtle, or RDF/XML using schema.org semantics.</td>
+</tr>
+<tr><td>Library (work metadata like LCCN)</td>
+<td>OLID - Open Library ID</td>
+<td>https://openlibrary.org/books/OL17870452M/</td>
+<td>openlibrary.org (Internet Archive)</td>
+<td>Returns HTML; API available to return JSON</td>
+</tr>
+<tr><td>Library (Item)</td>
+<td>Archival Resource Key (ARK) Identifier</td>
+<td>http://ark.cdlib.org/ark:/13030/tf5p30086k http://hdl.handle.net/2027/uiuo.ark:/13960/t7np24670</td>
+<td>Originated by California Digital Library, ~300 ARK Name Assigning Authorities at present: http://www.cdlib.org/uc3/naan_table.html</td>
+<td>Returns object or description; servicing entity is part of the URI. <br/>URI? returns brief metadata, URI?? returns &#39;policy stmt.&#39;</td>
+</tr>
+<tr><td>Library (Item)</td>
+<td>Local library identifiers, e.g., Barcodes, ...</td>
+<td>http://hdl.handle.net/2027/mdp.39015028364183</td>
+<td>individual library particpating in mass digitization, e.g., Open Content Alliance (IA), Google Books</td>
+<td>Excerpt or first page of book framed by metadata</td>
+</tr>
+<tr><td>Library (Item)</td>
+<td>Google Book identifiers (when ISBN not available)</td>
+<td>http://books.google.com/books?id=ISg9AAAAYAAJ</td>
+<td>In HathiTrust this same digital copy is identified by http://hdl.handle.net/2027/hvd.hx4p4f</td>
+<td>Excerpt or first page of book framed by metadata</td>
+</tr>
+<tr><td>Distribution</td>
+<td>GLN - Globl Location Number</td>
+<td> </td>
+<td>GFS1 agencies</td>
+<td> </td>
+</tr>
+<tr><td>Distribution</td>
+<td>SAN - Standard Address Number</td>
+<td> </td>
+<td>SAN agencies</td>
+<td> </td>
+</tr>
+<tr><td>Distribution</td>
+<td>SSCC - Serial Shipping Container Code</td>
+<td> </td>
+<td>GS1 agencies</td>
+<td> </td>
+</tr>
+<tr><td>Discovery?</td>
+<td>ISLI - International Standard Link Identifier</td>
+<td> </td>
+<td>ISO  ISLI Agency</td>
+<td>Identifies link between two entities and thenature of the link</td>
+</tr>
+<tr><td>Work</td>
+<td>NOID - Nice Opaque Identifiers</td>
+<td>Need to be combined with an ARK/HDL to be expressed as an URI http://ark.cdlib.org/ark:/13030/tf5p30086k</td>
+<td>California Digital Library</td>
+<td>Creates an opaque object identifier known as a NOID</td>
+</tr>
+</tbody></table>
