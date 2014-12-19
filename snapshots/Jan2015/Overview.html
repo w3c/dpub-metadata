@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="en">
+<head>
+        <title>
+            DPUB IG Metadata Task Force Report
+        </title>
+        <meta charset="utf-8">
+        <style>/* --- EXAMPLES --- */
+div.example-title {
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.example-title span {
+    text-transform: uppercase;   
+}
+aside.example, div.example, div.illegal-example {
+    padding: 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+div.illegal-example { color: red }
+div.illegal-example p { color: black }
+aside.example, div.example {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+    border-color: #e0cb52;
+    background: #fcfaee;    
+}
+
+aside.example div.example {
+    border-left-width: .1em;
+    border-color: #999;
+    background: #fff;
+}
+aside.example div.example div.example-title {
+    color: #999;
+}
+</style><link rel="next" href="interviews.html">
+        
+        
+
+        
+        <style type="text/css">
+            a.footnote_sign {
+                font-size: 70%;
+                vertical-align: super;
+                text-decoration: none !important;
+            }
+            /* Table zebra style... */
+            table.zebra {
+                font-size:inherit;
+                font:100%;
+                margin:1em;
+            }
+            table.zebra td {  
+              padding-left: 0.3em;
+            }
+
+            table.zebra th {  
+                font-weight: bold;  
+                text-align: center;  
+                background-color: NavyBlue !important; 
+                font-size: 110%;
+                background: hsl(180, 30%, 50%); 
+                color: #fff;
+            }
+
+            table.zebra th a:link {
+                color: #fff;
+            }
+
+            table.zebra th a:visited {
+                color: #aaa;
+            }
+
+            table.zebra tr:nth-child(even) { 
+                background-color: hsl(180, 30%, 93%) 
+            }
+
+            table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+            table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+            /* for commenting */
+              aside.comment {  
+                width: 15em;  
+                float: right;  
+                color: black;  
+                margin-top: 0.5em;  
+                margin-right: 0.5em;  
+                margin-bottom: 0.5em;  
+                margin-left: 0.5em;  
+                padding-top: 0.5em;  
+                padding-right: 0.5em;  
+                padding-bottom: 0.5em;  
+                padding-left: 0.5em;  
+                font-size: 0.9em;
+                background: Lavender;
+                border-left-width: .5em;
+                border-left-style: solid;
+                border-left-color: Orchid;
+              }
+
+              aside.comment > p:first-child:before {  
+                content: "COMMENTS: ";
+              }
+
+              .to_remove {
+                text-decoration: line-through;
+                background: yellow;
+              }
+              .to_add {
+                background: hsl(129, 100%, 74%);;
+              }
+              ul.longbullets li { margin-bottom: 0.5em;}
+        </style>
+    <style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #C83500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+@media print {
+    .removeOnSave {
+        display: none;
+    }
+}
+</style><link href="https://www.w3.org/StyleSheets/TR/W3C-IG-NOTE" rel="stylesheet"><!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--></head>
+    <body id="respecDocument" role="document" class="h-entry"><div id="respecHeader" role="contentinfo" class="head">
+  <p>
+      
+        
+            <a href="http://www.w3.org/"><img src="https://www.w3.org/Icons/w3c_home" alt="W3C" height="48" width="72"></a>
+        
+      
+  </p>
+  <h1 class="title p-name" id="title" property="dcterms:title">DPUB IG Metadata Task Force Report</h1>
+  
+  <h2 id="w3c-interest-group-note-08-january-2015" property="dcterms:issued" datatype="xsd:dateTime" content="2015-01-07T23:00:00.000Z"><abbr title="World Wide Web Consortium">W3C</abbr> Interest Group Note <time class="dt-published" datetime="2015-01-08">08 January 2015</time></h2>
+  <dl>
+    
+      <dt>This version:</dt>
+      <dd><a class="u-url" href="http://www.w3.org/TR/2015/NOTE-dpub-metadata-20150108/">http://www.w3.org/TR/2015/NOTE-dpub-metadata-20150108/</a></dd>
+      <dt>Latest published version:</dt>
+      <dd><a href="http://www.w3.org/TR/dpub-metadata/">http://www.w3.org/TR/dpub-metadata/</a></dd>
+    
+    
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="http://w3c.github.io/dpub-metadata/">http://w3c.github.io/dpub-metadata/</a></dd>
+    
+    
+    
+    
+    
+    
+    
+    <dt>Editors:</dt>
+    <dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Bill Kasdorf</span>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.hbgusa.com">BISG</a>, <span class="ed_mailto"><a class="u-email email" rel="foaf:mbox" href="mailto:bkasdorf@apexcovantage.com">bkasdorf@apexcovantage.com</a></span></span>
+</dd>
+<dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><span property="foaf:name" class="p-name fn">Madi Solomon</span>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.pearson.com">Pearson Plc.</a>, <span class="ed_mailto"><a class="u-email email" rel="foaf:mbox" href="mailto:madi.solomon@pearson.com">madi.solomon@pearson.com</a></span></span>
+</dd>
+<dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Ivan Herman" href="http://www.w3.org/People/Ivan/">Ivan Herman</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.w3.org"><abbr title="World Wide Web Consortium">W3C</abbr></a>, <span class="ed_mailto"><a class="u-email email" rel="foaf:mbox" href="mailto:ivan@w3.org">ivan@w3.org</a></span></span>
+</dd>
+
+    
+    
+      
+        
+          <dt>Repository:</dt>
+          
+             
+                
+                  <dd>
+                    <a href="https://github.com/w3c/dpub-metadata">
+                      Github Repository
+                    </a>
+                  </dd>
+                
+             
+          
+        
+      
+    
+  </dl>
+  
+  
+  
+  
+    
+      <p class="copyright">
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> ©
+        2014-2015
+        
+        <a href="http://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup>
+        (<a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
+        <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
+        <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>), 
+        
+        All Rights Reserved.
+        
+        <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
+        <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
+        
+          <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a>
+        
+        rules apply.
+      </p>
+    
+  
+  <hr>
+</div>
+        <section rel="bibo:Chapter" resource="#abstract" typeof="bibo:Chapter" datatype="" property="dcterms:abstract" class="introductory" id="abstract"><h2 id="h2_abstract" role="heading">Abstract</h2>
+            <p>
+                The Metadata Task Force of the DPIG found, through extensive interviews with representatives of various sectors and roles within the publishing ecosystem, that there are numerous pain points for publishers with regard to metadata but that these pain points are largely not due to deficiencies in the Open Web Platform. Instead, there is a widespread lack of understanding or implementation of the technologies that the OWP already makes available for addressing most of the issues raised. However, some of the very technologies that are little used or understood in most sectors of publishing are widely used and understood in certain other sectors (e.g., scientific publishing, libraries). Priorities that have emerged are the need for better understanding of the importance of expressing identifiers as URIs; the need for much more widespread use of RDF and its various serializations throughout the publishing ecosystem; and the need to develop a truly interoperable, cross-sector specification for the conveyance of rights metadata (while remaining agnostic as to the sector-specific vocabularies for the expression of rights). This Note documents in detail the issues that were raised; provides examples of available RDF educational resources at various levels, from the very technical to non-technical and introductory; and lists important identifiers used in the publishing ecosystem and documents which of them are expressed as URIs, and in what sectors and contexts. It recommends that while little new technology is called for, the <abbr title="World Wide Web Consortium">W3C</abbr> is in a unique position to bridge today's currently siloed metadata practices to help facilitate truly cross-sector exchange of interoperable metadata.
+            </p>
+        </section><section rel="bibo:Chapter" resource="#sotd" typeof="bibo:Chapter" id="sotd" class="introductory"><h2 id="h2_sotd" role="heading">Status of This Document</h2>
+  
+    
+      
+        <p>
+          <em>This section describes the status of this document at the time of its publication.
+          Other documents may supersede this document. A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the
+          latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at
+          http://www.w3.org/TR/.</em>
+        </p>
+        
+        
+            <p>
+                <em>This is a work in progress. No section should be considered final, and the absence of any content does not imply that such content is out of scope, or may not appear in the future. If you feel something should be covered here, tell us!</em>
+            </p>
+        
+        
+        <p>
+          This document was published by the <a href="http://www.w3.org/dpub/IG/">Digital Publishing Interest Group</a> as an Interest Group Note.
+          
+          
+            If you wish to make comments regarding this document, please send them to 
+            <a href="mailto:public-digipub@w3.org">public-digipub@w3.org</a> 
+            (<a href="mailto:public-digipub-request@w3.org?subject=subscribe">subscribe</a>,
+            <a href="http://lists.w3.org/Archives/Public/public-digipub/">archives</a>).
+          
+          
+          
+          
+          
+            
+            All comments are welcome.
+            
+          
+        </p>
+        
+        
+        
+          <p>
+            Publication as an Interest Group Note does not imply endorsement by the <abbr title="World Wide Web Consortium">W3C</abbr>
+            Membership. This is a draft document and may be updated, replaced or obsoleted by other
+            documents at any time. It is inappropriate to cite this document as other than work in
+            progress.
+          </p>
+        
+        
+        
+        <p>
+          
+          
+          
+          
+            The disclosure obligations of the Participants of this group are described in the 
+            <a href="http://www.w3.org/2004/01/pp-impl/64149/status">charter</a>. 
+          
+        </p>
+        
+          <p>This document is governed by the <a id="w3c_process_revision" href="http://www.w3.org/2014/Process-20140801/">1 August 2014 <abbr title="World Wide Web Consortium">W3C</abbr> Process Document</a>.
+          </p>
+        
+        
+      
+    
+  
+</section><section id="toc"><h2 id="h2_toc" role="heading" class="introductory">Table of Contents<span> — <a href="interviews.html" class="toxref" style="text-decoration:none !important">Interviews →</a></span></h2><ul id="respecContents" role="directory" class="toc"><li class="tocline"><a class="tocxref" href="#overview"><span class="secno">1. </span>
+                Overview
+            </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#recommendations-for-further-work-at-w3c"><span class="secno">1.1 </span>Recommendations for Further Work at <abbr title="World Wide Web Consortium">W3C</abbr></a></li></ul></li><li class="tocline"><a class="tocxref" href="#publishing-terms-and-concepts"><span class="secno">2. </span>
+                Publishing Terms and Concepts
+            </a></li><li class="tocline"><a class="tocxref" href="#background-interviews"><span class="secno">3. </span>
+                Background: Interviews
+            </a><ul class="toc"><li class="tocline"><a class="tocxref" href="#primary-observations"><span class="secno">3.1 </span>
+                  Primary Observations
+              </a></li><li class="tocline"><a class="tocxref" href="#important-themes"><span class="secno">3.2 </span>
+                  Important Themes
+              </a></li></ul></li><li class="tocline"><a class="tocxref" href="#acronyms-and-terms-used-in-the-report"><span class="secno">A. </span>Acronyms and Terms Used in the Report</a></li><li class="tocline"><a class="tocxref" href="#list_identifiers"><span class="secno">B. </span>List of Some Identifiers for the Publishing Industry</a></li><li class="tocline"><a class="tocxref" href="#list_docs"><span class="secno">C. </span>List of Some RDF/RDFa Outreach Documents</a></li><li class="tocline"><a class="tocxref" href="#footnotes"><span class="secno">D. </span>
+                Footnotes
+            </a></li></ul></section>
+        
+        <section id="overview">
+            <!--OddPage--><h2 id="h2_overview" role="heading"><span class="secno">1. </span>
+                Overview
+            </h2>
+            <p>
+                Publishers use metadata in three fundamentally different ways:
+            </p>
+            <ul>
+                <li>
+                   Metadata that is incorporated within a publication (e.g., an EPUB, a website).
+                </li>
+                <li>
+                   Metadata that is separate from the publication or publications it describes (e.g., the periodic "metadata feeds" that publishers provide to the supply chain).
+                </li>
+                <li>
+                   Metadata that is incorporated in systems designed to provide information about publications (e.g., a publisher’s, retailer’s, aggregator’s, or library's website).
+                </li>
+            </ul>
+            <p>
+                While in many cases metadata is in a system or a form outside of the Web and using technologies outside of the Open Web Platform (OWP), such as databases, repositories, authoring and formatting software, and proprietary aggregation and dissemination platforms, OWP technologies are increasingly becoming essential to all aspects of the publishing process (including modern versions of all those mentioned). 
+            </p>
+            <p>
+                The Metadata Task Force of the <abbr title="World Wide Web Consortium">W3C</abbr> Digital Publishing Interest Group (DPIG) was formed to identify ways in which the <abbr title="World Wide Web Consortium">W3C</abbr> could help address problems publishers currently have with regard to metadata. In its discovery phase, the TF found the following fundamental issues to be commonly regarded as "pain points" by publishers: 
+            </p>
+            <ul>
+                <li>
+                    <em>Granularity:</em> The need to associate metadata with arbitrarily granular units of content, rather than simply at the publication level.
+                </li>
+                <li>
+                    <em>Complexity:</em> The profusion of identifiers and metadata vocabularies is confusing and difficult to master.
+                </li>
+                <li>
+                    <em>Difficulty:</em> There are few systems or tools that enable metadata to be provided at appropriate stages of the workflow by non-technical people.
+                </li>
+                <li>
+                    <em>Futility:</em> Even when rich metadata is provided, it often isn't used by the systems disseminating or displaying the publications.
+                </li>
+            </ul>          
+            <p>
+                Although each sector of publishing has problems with metadata in its own ways, the causes of these problems fall into two major categories:
+            </p>
+            <ul>
+                <li>
+                    Problems addressable by refinements to the Open Web Platform.
+                </li>
+                <li>
+                    Lack of implementation, and even understanding, of existing features of the OWP on the part of publishers and others in the publishing supply chain.
+                </li>
+            </ul>
+            <p>
+                In its initial exploration of these issues, the <a href="https://www.w3.org/dpub/IG/wiki/Task_Forces/Metadata">Metadata Task Force</a> of the <a href="https://www.w3.org/dpub/IG/wiki/Main_Page"><abbr title="World Wide Web Consortium">W3C</abbr> Digital Publishing Interest Group</a> found that the vast majority of difficulties that publishers of all types have in implementing metadata more effectively are in the second category. In most cases, the OWP already has features that address these issues, if used properly by publishers and implemented properly in systems that create, disseminate, and display those publications (e.g., expressing identifiers as URIs, using RDF and RDFa, etc.). In other cases, ongoing work by the <abbr title="World Wide Web Consortium">W3C</abbr> will likely provide solutions or essential components to solutions (e.g., the work of the new <a href="http://www.w3.org/annotation/">Web Annotations WG</a> is closely related to the need to address arbitrarily granular units of content).
+            </p>
+            <aside class="example"><div class="example-title"><span>Example 1</span></div>
+                <a class="internalDFN" href="#dfn-crossref">CrossRef</a>—which provides (among other services) cross-publisher linking from citations to cited publications using the <a class="internalDFN" href="#dfn-doi">DOI</a> (the identifier that has become fundamental to the scholarly publishing ecosystem)—has for some time recommended that DOIs always be expressed in the form of a URI. However, this is inconsistently done because of the lack of understanding of the URI by publishers and other participants in the publishing ecosystem and the large number of existing published DOIs expressed in the previously recommended format, which was not a URI.
+            </aside>
+            <aside class="example"><div class="example-title"><span>Example 2</span></div>
+                <a class="internalDFN" href="#dfn-isbn">ISBN</a>s—the primary product identifier for books—can also be expressed as a URI. Better understanding of the URI and how to use it would be an important step in the improvement of metadata implementation within Web content and systems. For several years, there has been a specification known as "ISBN-A," which is an actionable ISBN built on a DOI and expressed as a URI. Nevertheless, the ISBN-A is rarely used and is little understood. The ISBN specification has recently been updated, and its new documentation describes the ISBN-A, which may serve to raise its profile.
+            </aside>
+            <aside class="example"><div class="example-title"><span>Example 3</span></div>
+                Many publishers who lament the lack of ability to describe their content at a very granular level are unaware of, or have only a vague understanding of, RDF and RDFa, and these technologies are seldom implemented in the systems used for the discovery and dissemination of publications. Better understanding of RDF and RDFa across the publishing ecosystem could promote the use of a technology that is currently significantly underutilized. 
+            </aside>  
+            <section id="recommendations-for-further-work-at-w3c">
+              <h3 id="h3_recommendations-for-further-work-at-w3c" role="heading"><span class="secno">1.1 </span>Recommendations for Further Work at <abbr title="World Wide Web Consortium">W3C</abbr></h3>        
+                <p>
+                    The <a href="https://www.w3.org/dpub/IG/wiki/Task_Forces/Metadata">Metadata Task Force of the <abbr title="World Wide Web Consortium">W3C</abbr> Digital Publishing Interest Group</a> has developed the following general and specific recommendations to the <abbr title="World Wide Web Consortium">W3C</abbr> with regard to the use of metadata within the OWP.
+                </p>
+                <ul class="longbullets">
+                    <li>
+                        <strong>Focus on enabling and facilitating the use of existing vocabularies rather than creating new ones.</strong> The vocabularies needed by different types of publishers vary tremendously, and in order to be effective they tend to be highly specific to certain disciplines, use cases, or sectors. A great number of these vocabularies already exist and are in wide use within the communities they were designed to serve. The role of the <abbr title="World Wide Web Consortium">W3C</abbr> should be to provide means to enable publishers and others in the publishing ecosystem to efficiently and effectively use those vocabularies in the three modes described at the beginning of this section. 
+
+                        <p><em>Specific recommendation:</em> The <abbr title="World Wide Web Consortium">W3C</abbr> should collaborate with <a class="internalDFN" href="#dfn-bisg">BISG</a>, the Book Industry Study Group; <a class="internalDFN" href="#dfn-editeur">EDItEUR</a>, the international organization responsible for <a class="internalDFN" href="#dfn-onix">ONIX</a>, the standard messaging format for dissemimation of book supply chain metadata; <a class="internalDFN" href="#dfn-schema.org">schema.org</a>, which provides the most commonly used means of embedding metadata in web content; and other appropriate parties internationally to develop optimal ways for book publishers to embed appropriate and useful metadata in Web content based on the well known and widely implemented <a class="internalDFN" href="#dfn-onix">ONIX</a> model. The <a class="internalDFN" href="#dfn-bisg">BISG</a> has already formed a Working Group to address this issue from the point of view of its US constituency, and that WG is chaired by the Executive Director of <a class="internalDFN" href="#dfn-editeur">EDItEUR</a>, who can ensure that the resulting recommendations are globally applicable. The <abbr title="World Wide Web Consortium">W3C</abbr> is uniquely positioned to be a key partner to all of these organizations, providing the foundational technologies on which much of their work is based. It could serve a valuable role in facilitating collaboration internationally and addressing any technological limitations revealed in the course of that collaboration so that solutions are truly global and interoperable.</p>
+                    </li>
+                    <li>
+                        <strong>Educate publishers and their partners on how best to use existing features of the OWP.</strong> While technical specifications, sometimes supplemented by primers, are already provided on such features by the <abbr title="World Wide Web Consortium">W3C</abbr> and the community at large, these are often targeted at technical users. There is a need for much simpler, more user-friendly documentation aimed at non-technical people within the publishing ecosystem. There is also a need for much more aggressive dissemination of this information throughout the publishing ecosystem to demystify these features of the OWP and encourage their broad and proper use both by creators and recipients of metadata. 
+
+                        <p><em>Specific recommendation:</em> Focus initially on encouraging proper understanding and use of URIs and of RDF/RDFa. To this end, the Metadata Task Force developed two lists:</p>
+                        <ul class="longbullets">
+                            <li>An extensive (though not exhaustive) list of identifiers used in publishing (see Appendix <a class="sec-ref" href="#list_identifiers"><span class="secno">B.</span> <span class="sec-title">List of Some Identifiers for the Publishing Industry</span></a>), documenting those that are recommended to be expressed as URIs. It is clear from this research that in fact a great many identifiers either are or can be expressed as URIs. Within specific domains—typically those whose content is mostly online and whose constituents depend on the web for their work—identifiers are in fact commonly expressed as URIs. Within other domains—typically those whose content is not generally online, such as trade book publishers—identifiers are seldom expressed as URIs. It is the recommendation of the Metadata Task Force that the <abbr title="World Wide Web Consortium">W3C</abbr> reach out to organizations representing domains not commonly using URIs for identifiers to help them educate their members. It is through such organizations as the BISG, BIC, and EDItEUR (the book publishing supply chain), IDEAlliance (magazine publishers), and SSP and STM (scholarly publishing) that such education can most effectively be done.</li>
+
+                            <li>A list of a variety of resources available that document or explain RDF and related semantic technologies (see Appendix <a class="sec-ref" href="#list_docs"><span class="secno">C.</span> <span class="sec-title">List of Some RDF/RDFa Outreach Documents</span></a>). Again, this is <em>not</em> an exhaustive list; instead, it was developed to show that there are indeed a variety of resources—some targeted at developers and other technical people, but others specifically targeted at non-technical people—that serve these purposes. Most of these have been developed within a certain domain (e.g., libraries, magazine publishers, news organizations) and are virtually unknown outside that domain. As is the case with URIs mentioned above, the <abbr title="World Wide Web Consortium">W3C</abbr> is ideally positioned to serve as a clearinghouse or hub for such information, as well as to serve as an authoritative resource to vet such publications for accuracy.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Work to help facilitate the association of rights metadata with content.</strong> While various sectors of publishing—specifically, trade book publishers, educational publishers, scholarly/STM publishers, magazine publishers, and news organizations—have different priorities, different needs, and different vocabularies for the expression of rights information, they share a need to be able to communicate that metadata in an interoperable way, at an arbitrarily granular level, in web-based content. For example, the ODRL Community Group has developed the Open Digital Rights Language, which is currently in draft form as version 2.1, but this is not a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation or on a Recommendation track. The IDEAlliance is working on the development of rights metadata for the magazine publishing industry, and intends to base it on ODRL. The BISG has developed a rights vocabulary for the book publishing industry. In today's web-based world, previously siloed content now spans domains: for example, a single educational resource could use a chapter from a book, an image from a scholarly journal, a video from the entertainment industry, an article from a magazine, and a blog or podcast from a news organization. Its need to manage the rights information for all those components is crucial, and the ability for those separate organizations to both manage the rights offered to their content and gain income from its use is compelling. It would be beneficial to the publishing ecosystem as a whole if a canonical, interoperable standard were available for the expression of such rights metadata that would span or undergird such domain-specific vocabularies.
+                    </li>
+                </ul>
+              </section>
+        </section>
+        <section id="publishing-terms-and-concepts">
+            <!--OddPage--><h2 id="h2_publishing-terms-and-concepts" role="heading"><span class="secno">2. </span>
+                Publishing Terms and Concepts
+            </h2>
+            <p><strong>METADATA TF: Do we still need this section? Ivan has provided a glossary of acronyms with links to resources. Is that sufficient, or do we need to write this section as we had originally intended to do?</strong></p>
+            <p>
+                <em>[This section should provide very brief definitions of the key terms that need to be understood before reading the balance of the document and which may not be understood by readers within the <abbr title="World Wide Web Consortium">W3C</abbr> (e.g., ONIX, DOI, CrossRef, BISAC, Thema etc.). They should link to a Glossary which contains a more comprehensive set of terms used in this document (which should be at the end--it would be distracting here), each of which should link, as appropriate, to authoritative resources. Thus ONIX might be briefly defined as I described it above; the glossary would provide a 2-3 sentence description and would link out to the EDItEUR's ONIX page. Ditto for DOI, CrossRef, BISAC, Thema, etc.]</em>
+            </p>  
+        </section>
+        <section id="background-interviews">
+            <!--OddPage--><h2 id="h2_background-interviews" role="heading"><span class="secno">3. </span>
+                Background: Interviews
+            </h2>
+            <p>
+                In order to assess the “pain points” with regard to metadata for publishers, the co-leaders of the task force, Madi Solomon of Pearson and Bill Kasdorf of Apex, conducted a number of interviews in 2014 with publishers, service providers, and representatives from related organizations. The inverviews themeselves are available in a <a href="interviews.html">separate document</a>.
+            </p>
+            <p>
+                The interviewees were selected to provide insight from a variety of perspectives, and were individuals known to the interviewers to be knowledgeable and authoritative within their spheres. Ms. Solomon took a “vertical” approach, interviewing a broad range of individuals within Pearson, a large global educational publisher. Mr. Kasdorf took a “horizontal” approach, interviewing experts from diverse types of publishing (book, journal, magazine, and news) and representing diverse roles within the digital publishing ecosystem (publishers, metadata service providers, consultants, and representatives from other organizations that are addressing the issue of metadata in publishing).
+            </p>
+            <p>
+                The interview strategy was to conduct casual, open-ended interviews with a single individual without an agenda or a prepared set of questions. The reason for this strategy was to avoid steering the discussion in particular directions. Instead, in this initial phase, the goal was to elicit what each interviewer would perceive as the key issues and pain points with regard to metadata from their own point of view. Thus the interviews deliberately did not focus on the issue of what the <abbr title="World Wide Web Consortium">W3C</abbr> could do—and what changes could be made to the Open Web Platform to address them. Instead, the interviews stayed on the general level. Since many of the interviewees were not technical, framing the discussion in too technical a manner would have impeded the ability to obtain authentic responses. As expected, few of the interviewees felt able to identify specific “pain points” with regard to the OWP. They spoke instead of general issues of concern to them in their work. The hope was that with an understanding of these issues and pain points, the DPIG could then assess where the <abbr title="World Wide Web Consortium">W3C</abbr> and the OWP could potentially help address them—and could avoid addressing theoretical technical issues that might not in fact align with publishers’ priorities.
+            </p>
+            <p>
+                While the published interview reports cited above will provide the best understanding of both the common themes and diverse perspectives revealed by the interviews, this report attempts to summarize key observations and offer initial recommendations for subsequent strategies.
+            </p>
+          <section id="primary-observations">
+              <h3 id="h3_primary-observations" role="heading"><span class="secno">3.1 </span>
+                  Primary Observations
+              </h3>
+              <p>
+                  If there is a single overarching lesson revealed by these interviews, it is that the issues with regard to metadata seen as priorities for publishers and their clients and partners differ significantly between publishing sectors (although they all share all of these issues to some extent).
+              </p>
+              <ul class="longbullets">
+                  <li>
+                      <em>Trade book publishers are primarily concerned with discovery:</em> providing metadata to the supply chain that will attract readers to their books and result in increased sales. It was observed that at the present time book content itself is not typically online; it is available digitally only as products (e.g., EPUB), and typically only at the title (book) level, and the metadata regarding those products (primarily in <a class="internalDFN" href="#dfn-onix">ONIX</a>) is created, maintained, and disseminated independently of the products themselves.
+                  </li>
+                  <li>
+                      <em>Educational publishers see metadata primarily in the context of asset and content management:</em> the identification and characterization of granular components of content within a large repository of content in order to facilitate the creation of publications, the delivery of content in “chunks,” the repurposing of content to create new editions and new products, the ability to guide students and teachers to highly targeted components of content, and the ability manage both rights and permissions associated with those components of content. The ability to personalize content to individual students, the ability to associate learning objectives with arbitrarily granular components of content, and the ability to monitor and assess the use of content by students and the learning outcomes that result are all key metadata priorities for educational publishers.
+                  </li>
+                  <li>
+                      <em>Scholarly publishers often perceive metadata as a “solved problem”:</em> while none would assert that the current situation is perfect, the standards-based consensus in the scholarly publishing world—consisting of nearly universal participation in <a class="internalDFN" href="#dfn-crossref">CrossRef</a> and CCC (the Copyright Clearance Center), the ubiquitous use of the <a class="internalDFN" href="#dfn-jats">JATS</a> XML model<a class="footnote_sign" href="#_ftn2" title="" id="_ftnref2">1</a> for markup and metadata, and the reliance upon the <a class="internalDFN" href="#dfn-doi">DOI</a> as a persistent, actionable identifier—initially for journal articles but now increasingly for book chapters and components, reference content, conference proceedings, and other publications, as well as the data sets that support research)—has enabled the development a rich ecosystem of services and platforms that has made the Web the primary mode of publication, dissemination, and access for scholarly content. It has also led to the development of other standards—such as <a class="internalDFN" href="#dfn-orcid">ORCID</a>, the Open Researcher and Contributor ID, and <a class="internalDFN" href="#dfn-fundref">FundRef</a>, a system for making public the funders of research—that continually refine the sophistication and utility of metadata in the scholarly publishing world, solving what were previously significant pain points (e.g., disambiguating contributor identities, revealing potential conflicts of interest or reliably documenting the absence of such conflicts). However, it is increasingly being recognised among scholarly and STM publishers that while they somewhat uniquely enjoy a common model (JATS) that accommodates extensive metadata, the lack of consistency in the implementation and use of that metadata is indeed a problem.
+                  </li>
+                  <li>
+                      <em>Magazine publishers and news organizations are currently focused on rights metadata:</em> the rapid shift to the Web as a source of news, entertainment, and information has created an urgent need to identify the owners of content and the rights associated with very granular components of content-both the rights that apply broadly to a particular unit of content (e.g., copyright) and the usage rights conveyed by the rightsholder to specific parties, in specific contexts, for specific purposes, and in specific modes. While there are well established metadata models in each of these areas—<a class="internalDFN" href="#dfn-prism">PRISM</a> is a very rich metadata framework virtually universal in the magazine world, and standards such as <a class="internalDFN" href="#dfn-iptc">IPTC</a> photo and media metadata, <a class="internalDFN" href="#dfn-rnews">rNews</a>, <a class="internalDFN" href="#dfn-newsml">newsML</a>, and <a class="internalDFN" href="#dfn-schema.org">schema.org</a> are widely used by news organizations—standards bodies in both of these areas (IDEAlliance for magazines and <a class="internalDFN" href="#dfn-iptc">IPTC</a> for news) are each actively working on developing and refining rights metadata models.
+                  </li>
+              </ul>
+              <p>
+                  While all of these issues—discovery via subject metadata and other metadata characterizing content and products, management of content via metadata, development and participation of cross-publisher platforms and services via metadata, and the communication of rights via metadata—cross all sectors of publishing, it is clear from the interviews that the priorities in distinct sectors diverge significantly.
+              </p>
+              <p>
+                  Another major theme heard in virtually all of the interviews was that metadata is “too complicated.” Book publishers, for example, recognize that <a class="internalDFN" href="#dfn-onix">ONIX</a> is the standard way to communicate supply chain metadata; as such, it is an extremely rich, complex, and useful standard. Similarly, the <a class="internalDFN" href="#dfn-bisac">BISAC</a> standard is a rich vocabulary used in the US for subject classification; there are similar such standards in most other countries or regions, and also a new global standard, Thema. While publishers recognize the value of these standards, they often characterize them as “too hard”; yet when pressed for what an individual publisher needs to communicate (to the supply chain, or about the subjects of its books), they often wind up asking for more complexity. (E.g., a U.S. publisher may want to describe a book as being about “the Battle of the Bulge, within the topic “World War II” which itself is in the category of military history; this can be done with <a class="internalDFN" href="#dfn-bisac">BISAC</a> but not with <a class="internalDFN" href="#dfn-thema">Thema</a>.) The truth is that these systems are complex because what they are designed to do is complex. The desire for an “ONIX Lite” expressed by several interviewees may prove to be unrealistic, because a significantly simpler model would be significantly less expressive.
+              </p>
+              <p>
+                  Another common theme was that in too many cases metadata may exist—or may potentially exist, if applied to a given publication—but it often “doesn’t do anything.” It is very frustrating to users if it is the case—or even if it is their perception—that going the work to adding metadata is futile because systems are not seen as using it. (This is of course true of some types of metadata but not others: clearly trade publishers know how their <a class="internalDFN" href="#dfn-onix">ONIX</a> metadata is used by the supply chain, and scholarly publishers know how their <a class="internalDFN" href="#dfn-crossref">CrossRef</a> metadata is used for citation linking.) This particularly surfaced in the context of the Pearson interviews because complex educational content is created by a vast team of participants, each of whom may have the ability to provide some aspect of metadata but most of whom have no clear understanding of how to do so, no systems to enable to do that consistently, and no faith that if they “go to all that work,” it will actually be used for any purpose downstream.
+              </p>
+              <p>
+                  In thinking about metadata, it is important to distinguish between metadata that is incorporated within a publication (an EPUB, a website); metadata that is separate from the publication or publications it describes (e.g., <a class="internalDFN" href="#dfn-onix">ONIX</a>, which can continually change over time without requiring the publications it communicates metadata about to be altered); and metadata that is incorporated in systems designed to provide information about publications (e.g., a publisher’s, retailer’s, or aggregator’s website).
+              </p>
+              <p>
+                  And finally, it should be noted that an important theme that <em>did not</em> emerge from the interviews was the importance of accessibility. Revealing this was one of the benefits of the interview strategy of not asking leading questions: when anybody is asked if accessibility is an important issue, they will almost always say it is. So it is particularly—and lamentably—of note that none of the interviewees mentioned accessibility as a priority issue with regard to metadata.
+              </p>
+          </section>
+          <section id="important-themes">
+              <h3 id="h3_important-themes" role="heading"><span class="secno">3.2 </span>
+                  Important Themes
+              </h3>
+              <p>
+                  The key themes of the interviews conducted by Mr. Kasdorf are summarized in the following <span>appendix</span>. They are the following:
+              </p>
+              <ul>
+                  <li>Complexity</li>
+                  <li>Inconsistency</li>
+                  <li>Sacrificing Richness for Simplicity</li>
+                  <li>ONIX vs. Subject Metadata</li>
+                  <li>Few Books are Online Anyway</li>
+                  <li>Discovery (AKA Marketing) is the Priority</li>
+                  <li>Identifiers, Identifiers, Identifiers</li>
+                  <li>And Now for Something Completely Different: News</li>
+              </ul>
+              <p>
+                  Please see the <a href="https://www.w3.org/dpub/IG/wiki/Task_Forces/Metadata#Phase_1_Strategy">summary on the group’s wiki page</a> for a discussion of these themes, including important comments by members of the DPIG.
+              </p>
+              <p>
+                  The key themes of the interviews conducted by Ms. Solomon are summarized as follows:
+              </p>
+              <ul>
+                  <li>Governance</li>
+                  <li>Rights</li>
+                  <li>Flow</li>
+                  <li>Lack of Skills</li>
+                  <li>Lack of Authority</li>
+                  <li>Standards</li>
+                  <li>Inconsistency</li>
+                  <li>Lack of Incentives</li>
+                  <li>Need for Learning Objectives</li>
+                  <li>More Education and Guidance</li>
+              </ul>
+              <p>
+                  Please see Ms. Solomon’s report in the <a href="interviews.html#vertical">interview document</a> for a more detailed discussion of these themes.
+              </p>
+          </section>
+        </section>
+        <section id="acronyms-and-terms-used-in-the-report" class="appendix">
+          <!--OddPage--><h2 id="h2_acronyms-and-terms-used-in-the-report" role="heading"><span class="secno">A. </span>Acronyms and Terms Used in the Report</h2>
+          <div>            <ul>
+                <li><dfn id="dfn-bibframe">BIBFRAME</dfn>: is a proposed successor to <a class="internalDFN" href="#dfn-marc">MARC</a>, mainly developed and promoted by the Library of Congress and Virginia Tech.</li>
+                <li><dfn id="dfn-bisac">BISAC</dfn>: Book Industry Standards and Communications, <a href="https://www.bisg.org/complete-bisac-subject-headings-2013-edition"><code>https://www.bisg.org/complete-bisac-subject-headings-2013-edition</code></a></li>
+                <li><dfn id="dfn-bisg">BISG</dfn>: Book Industry Study Group, <a href="http://www.bisg.org"><code>http://www.bisg.org</code></a></li>
+                <li><dfn id="dfn-crossmark">CrossMark</dfn>: identification service from <a class="internalDFN" href="#dfn-crossref">CrossRef</a>, <a href="http://www.crossref.org/crossmark/"><code>http://www.crossref.org/crossmark/</code></a></li>
+                <li><dfn id="dfn-crossref">CrossRef</dfn>: association of scholarly publishers that develops shared infrastructure to support more effective scholarly communications, <a href="http://www.crossref.org"><code>http://www.crossref.org</code></a></li>
+                <li><dfn id="dfn-dewey">Dewey</dfn>: Dewey Decimal Classification (or Dewey Decimal System) used mainly by libraries, <a href="http://www.oclc.org/dewey.en.html"><code>http://www.oclc.org/dewey.en.html</code></a>
+                </li><li><dfn id="dfn-edi">EDI</dfn>: Electronic Data Interchange <a href=""></a></li>
+                <li><dfn id="dfn-doi">DOI</dfn>: Digital Object Identifier, <a href="http://www.doi.org"><code>http://www.doi.org</code></a></li>
+                <li><dfn id="dfn-editeur">EDItEUR</dfn>: international group coordinating development of the standards infrastructure for electronic commerce in the book, e-book and serials sectors, <a href="http://www.editeur.org"><code>http://www.editeur.org</code></a></li>
+                <li><dfn id="dfn-fundref">Fundref</dfn>: provides a standard way to report funding sources for published scholarly research, <a href="http://www.crossref.org/fundref/"><code>http://www.crossref.org/fundref/</code></a></li>
+                <li><dfn id="dfn-gs1">GS1</dfn>: international not-for-profit association that develops and maintains standards for supply and demand chains across multiple sectors, <a href="http://www.gs1.org"><code>http://www.gs1.org</code></a></li>
+                <li><dfn id="dfn-icedis">ICEDIS</dfn>: EDItEUR’s special interest group for subscriptions, serials and library supply, <a href="http://www.editeur.org/131/Overview/"><code>http://www.editeur.org/131/Overview/</code></a></li>
+                <li><dfn id="dfn-iptc">IPTC</dfn>: International Press and Telecommunications Council, <a href="http://www.iptc.org"><code>http://www.iptc.org</code></a></li>
+                <li><dfn id="dfn-iptc-7901">IPTC 7901</dfn>: text transmission format, <a href="http://www.iptc.org/site/News_Exchange_Formats/IPTC_7901/"><code>http://www.iptc.org/site/News_Exchange_Formats/IPTC_7901/</code></a> </li>
+                <li><dfn id="dfn-iim">IIM</dfn>: Information Interchange Model, <a href="http://www.iptc.org/cms/site/index.html?channel=CH0108"><code>http://www.iptc.org/cms/site/index.html?channel=CH0108</code></a></li>
+                <li><dfn id="dfn-isbn">ISBN</dfn>: International Standard Book Number, <a href="http://www.isbn-international.org/"><code>http://www.isbn-international.org/</code></a></li>
+                <li><dfn id="dfn-isni">ISNI</dfn>: International Standard Name Identifier, <a href="http://www.isni.org"><code>http://www.isni.org</code></a></li>
+                <li><dfn id="dfn-issn">ISSN</dfn>: International identifier for serials and other continuing resources, in the electronic and print world, <a href="http://www.issn.org"><code>http://www.issn.org</code></a></li>
+                <li><dfn id="dfn-jats">JATS</dfn>: Journal Article Tag Suite, <a href="http://jats.nlm.nih.gov"><code>http://jats.nlm.nih.gov</code></a></li>
+                <li><dfn id="dfn-marc">MARC</dfn> (usually referring to MARC 21): MAchine-Readable Cataloging, <a href="http://www.loc.gov/marc/bibliographic/ecbdhome.html"><code>http://www.loc.gov/marc/bibliographic/ecbdhome.html</code></a></li>
+                <li><dfn id="dfn-newsml">NewsML</dfn>: an XML standard designed to provide a media-independent, structural framework for multi-media news, <a href="http://www.newsml.org/"><code>http://www.newsml.org/</code></a></li>
+                <li><dfn id="dfn-niso">NISO</dfn>: National Information Standards Organization, <a href="http://www.niso.org/"><code>http://www.niso.org/</code></a></li>
+                <li><dfn id="dfn-odrl">ODRL</dfn>: Open Digital Rights Language, <a href="http://www.w3.org/community/odrl/two/model/"><code>http://www.w3.org/community/odrl/two/model/</code></a> </li>
+                <li><dfn id="dfn-onix">ONIX</dfn> (usually referring to ONIX for Books in this document): international standard for representing and communicating book industry product information in electronic form, <a href="http://www.editeur.org/11/Books/"><code>http://www.editeur.org/11/Books/</code></a></li>
+                <li><dfn id="dfn-onix-pc">ONIX-PC</dfn>: a complement to ONIX for Books that is currently mainly oriented to journals, <a href="http://www.editeur.org/126/ONIX-PC/"><code>http://www.editeur.org/126/ONIX-PC/</code></a></li>
+                <li><dfn id="dfn-orcid">ORCID</dfn>: Open Researcher and Contributor ID, <a href="http://orcid.org/"><code>http://orcid.org/</code></a></li>
+                <li><dfn id="dfn-prism">PRISM</dfn>: Publishing Requirements for Industry Standard Metadata, <a href="http://www.idealliance.org/specifications/prism-metadata-initiative/prism"><code>http://www.idealliance.org/specifications/prism-metadata-initiative/prism</code></a> </li>
+                <li><dfn id="dfn-rfid">RFID</dfn>: Radio-frequency identification</li>
+                <li><dfn id="dfn-rdfa">RDFa</dfn>: specification to express RDF data in HTML, <a href="http://rdfa.info"><code>http://rdfa.info</code></a></li>
+                <li><dfn id="dfn-rightsml">RightsML</dfn>: IPTC's Rights Expression Language for the media industry, <a href="http://www.iptc.org/site/RightsML/"><code>http://www.iptc.org/site/RightsML/</code></a> </li>
+                <li><dfn id="dfn-rnews">rNews</dfn>: an IPTC vocabulary for using semantic markup to annotate news-specific metadata in HTML documents, <a href="http://dev.iptc.org/rNews"><code>http://dev.iptc.org/rNews</code></a></li>
+                <li><dfn id="dfn-schema.org">schema.org</dfn>: initiative to create and support a common set of schemas for structured data markup on web pages, <a href="http://schema.org"><code>http://schema.org</code></a></li>
+                <li><dfn id="dfn-skos">SKOS</dfn>: Simple Knowledge Organization System, <a href="http://www.w3.org/2004/02/skos/"><code>http://www.w3.org/2004/02/skos/</code></a></li>
+                <li><dfn id="dfn-stem">STEM</dfn>: Science, Technology, Education, and Medical (publishing)</li>
+                <li><dfn id="dfn-stm">STM</dfn>: Science, Technology, and Medical (publishing)</li>
+                <li><dfn id="dfn-thema">Thema</dfn>: subject category scheme for a global book trade, <a href="http://www.editeur.org/151/Thema/"><code>http://www.editeur.org/151/Thema/</code></a></li>
+                <li><dfn id="dfn-toc">TOC</dfn>: Table of Contents</li>
+                <li><dfn id="dfn-upc">UPC</dfn>: Universal Product Code</li>
+                <li><dfn id="dfn-xmp">XMP</dfn>: Extensible Metadata Platform, <a href="http://partners.adobe.com/public/developer/en/xmp/sdk/XMPspecification.pdf"><code>http://partners.adobe.com/public/developer/en/xmp/sdk/XMPspecification.pdf</code></a> </li>
+            </ul>
+</div>
+        </section> 
+        <section rel="bibo:Chapter" resource="#list_identifiers" typeof="bibo:Chapter" class="appendix" id="list_identifiers">
+          <!--OddPage--><h2 id="h2_list_identifiers" role="heading"><span class="secno">B. </span>List of Some Identifiers for the Publishing Industry</h2>
+          <p>(See also <a href="https://www.bisg.org/guide-identifiers-0">BISG’s Guide to Identifiers</a>.)
+          </p><div><table class="zebra">
+<thead><tr><th title="Field #1">Category</th>
+<th title="Field #2" width="30%">Identifier</th>
+<th title="Field #4">URI/URN Example (if defined)</th>
+<th title="Field #5">Authority</th>
+<th title="Field #6">Resolution result</th>
+</tr></thead>
+<tbody><tr><td>Creator/Contributor</td>
+<td><a href="http://www.ipisystem.org/SUISASITES/IPI/ipipublic.nsf/pages/index1">IPI—Interested Parties Information</a></td>
+<td> </td>
+<td><a href="http://www.cisac.org/">International Confederation of Societies of Authors and Composers (CISAC)</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Creator/Contributor</td>
+<td><a href="http://isni.org/how-isni-works">ISNI—International Standard Name Identifier</a></td>
+<td>http://isni.org/isni/0000000134596488</td>
+<td><a href="http://isni.org">ISNI Registration Authority, ISO</a>. Current Registries include Bowker and Ringgold</td>
+<td>ISNI record</td>
+</tr>
+
+<tr><td>Creator/Contributor</td>
+<td><a href="http://orcid.org/about/what-is-orcid">ORCID—Open Researcher and Contributor ID</a></td>
+<td>http://orcid.org/0000-0002-1825-0097</td>
+<td><a href="http://orcid.org">ORCID.org</a></td>
+<td>ORCID servers</td>
+</tr>
+
+<tr><td>Creator/Contributor</td>
+<td><a href="https://www.surf.nl/en/themes/research/research-information/digital-author-identifier-dai/digital-author-identifier-dai.html">DAI—Digital Author ID</a></td>
+<td> </td>
+<td><a href="https://www.surf.nl/en">SURF</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Creator/Contributor</td>
+<td><a href="http://lattes.cnpq.br" hreflang="pt-br">Lattes Platform</a></td>
+<td> </td>
+<td>Brazilian Government</td>
+<td> </td>
+</tr>
+
+<tr><td>Creator/Contributor</td>
+<td><a href="http://www.deutsche-biographie.de" hreflang="de" lang="de">Deutsche Biographie</a></td>
+<td>http://data.deutsche-biographie.de/sfz26859</td>
+<td><a href="http://www.historischekommission-muenchen.de/" hreflang="de" lang="de">Historischen Kommission</a> of the “<span lang="de">Bayerischen Akademie der Wissenschaften</span>” </td>
+<td>RDF description</td>
+</tr>
+
+<tr><td>Creator/Contributor</td>
+<td><a href="http://thesaurus.cerl.org">CERL Thesaurus</a></td>
+<td>http://thesaurus.cerl.org/record/cnp01379452</td>
+<td><a href="http://www.cerl.org">Consortium of European Research Libraries (CERL)</a></td>
+<td>resolves to human HTML description; RDF serializations available.</td>
+</tr>
+
+<tr><td>Creator/Contributor</td>
+<td><a href="http://viaf.org">VIAF—Virtual International Authority File</a></td>
+<td>http://viaf.org/viaf/10179357</td>
+<td><a href="http://oclc.org">OCLC</a></td>
+<td>HTML or RDF serialization (content negotiation?)</td>
+</tr>
+
+<tr><td>Work</td>
+<td><a href="http://www.doi.org">DOI—Digital Object Identifer</a></td>
+<td>http://dx.doi.org/10.1007/1-4020-4466-6</td>
+<td><a href="http://www.doi.org">International DOI Foundation</a></td>
+<td>Registerd digital object.</td>
+</tr>
+
+<tr><td>Work (not really)</td>
+<td><a href="http://www.loc.gov/publish/pcn/">LoC—Library of Congress Control No. (LCCN)</a></td>
+<td>http://lccn.loc.gov/2003556443<br>http://lccn.loc.gov/sh2007001751 </td>
+<td><a href="http://www.loc.gov">Library of Congress</a> (LoC)</td>
+<td>Metadata, e.g., MARC or MODS/MADS record</td>
+</tr>
+
+<tr><td>Work</td>
+<td><a href="http://isrc.ifpi.org/en/">ISRC—International Standard Recording Code</a></td>
+<td> </td>
+<td><a href="http://isrc.ifpi.org/en/contact/national-agency-contacts">National ISRC Agencies</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Work</td>
+<td><a href="http://www.istc-international.org">ISTC—International Standard Text Code</a></td>
+<td> </td>
+<td><a href="http://www.istc-international.org/html/registration.aspx">ISTC Agencies</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Product &amp; Unit</td>
+<td><a href="http://www.gs1.org/gsmp/kc/epcglobal/tds">EPC—Electronic Product Code</a></td>
+<td>urn:epc:id:sgtin:978817525.0766.999999999999</td>
+<td><a href="http://www.gs1.org">GS1</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Product &amp; Unit</td>
+<td><a href="http://www.gtin.info">GTIN—Global Trade Item Number</a></td>
+<td> </td>
+<td><a href="http://www.gs1.org">GS1</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Product &amp; Unit</td>
+<td><a href="https://www.isbn-international.org">ISBN—International Standard Book Number</a></td>
+<td>urn:isbn:978-952-10-9981-6<br>http://urn.fi/URN:ISBN:978-952-10-9981-6</td>
+<td><a href="https://www.isbn-international.org">International ISBN Agencies</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Product &amp; Unit</td>
+<td><a href="http://www.ismn-international.org/whatis.html">ISMN—International Standard Music Number</a></td>
+<td> </td>
+<td><a href="http://www.ismn-international.org/howtoget.html">ISMN agencies</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Product &amp; Unit</td>
+<td><a href="http://www.issn.org/">ISSN—International Standards Serial Number</a></td>
+<td> </td>
+<td><a href="http://www.issn.org/the-centre-and-the-network/members-countries/the-issn-network-today/">ISSN Agencies</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Product &amp; Unit</td>
+<td><a href="http://www.issn.org/">ISSN—International Standards Serial Number</a></td>
+<td> </td>
+<td><a href="http://www.issn.org/the-centre-and-the-network/members-countries/the-issn-network-today/">ISSN Agencies</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Product &amp; Unit</td>
+<td><a href="http://www.officialeancode.com/barcode-book.html">EAN–International Article Number</a></td>
+<td></td>
+<td><a href="http://www.bookwire.com">Bookwire</a></td>
+<td>Redirection to bib manifestation (in RDF, using schema.org semantics).</td>
+</tr>
+
+<tr><td>Library (work metadata like LCCN)</td>
+<td><a href="https://openlibrary.org">OLID—Open Library ID</a></td>
+<td>https://openlibrary.org/books/OL17870452M/</td>
+<td><a href="https://openlibrary.org">Open Library</a> (Internet Archive)</td>
+<td>HTML, RDF, JSON</td>
+</tr>
+
+<tr><td>Library (Item)</td>
+<td><a href="https://wiki.ucop.edu/display/Curation/ARK">ARK—Archival Resource Key Identifier</a></td>
+<td>http://ark.cdlib.org/ark:/13030/tf5p30086k http://hdl.handle.net/2027/uiuo.ark:/13960/t7np24670</td>
+<td><a href="http://www.cdlib.org/uc3/naan_table.html">ARK Name Assigning Authorities, California Digital Library (CDL)</a></td>
+<td>Object or description; servicing entity is part of the URI</td>
+</tr>
+
+<tr><td>Distribution</td>
+<td><a href="http://www.gs1.org/barcodes/technical/idkeys/gln">GLN—Global Location Number</a></td>
+<td> </td>
+<td><a href="http://www.gs1.org">GS1</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Distribution</td>
+<td><a href="http://www.niso.org/apps/group_public/project/details.php?project_id=54">SAN—Standard Address Number</a></td>
+<td> </td>
+<td><a href="http://www.bowker.com">R.R. Bowker</a></td>
+<td> </td>
+</tr>
+
+<tr><td>Distribution</td>
+<td><a href="http://www.gs1.org/barcodes/technical/idkeys/sscc">SSCC—Serial Shipping Container Code</a></td>
+<td> </td>
+<td><a href="http://www.gs1.org">GS1</a></td>
+<td></td>
+</tr>
+
+<tr><td>Discovery</td>
+<td><a href="http://www.iso.org/iso/catalogue_detail.htm?csnumber=59560">ISLI—International Standard Link Identifier</a></td>
+<td> </td>
+<td><a href="http://www.iso.org">ISO</a></td>
+<td>Identifies link between two entities and the nature of the link; Under development</td>
+</tr>
+
+<tr><td>Work</td>
+<td><a href="https://wiki.ucop.edu/display/Curation/NOID">NOID—Nice Opaque Identifiers</a></td>
+<td>Need to be combined with an ARK/HDL to be expressed as an URI http://ark.cdlib.org/ark:/13030/tf5p30086k</td>
+<td><a href="http://www.cdlib.org">California Digital Library</a></td>
+<td>Creates an opaque object identifier known as a NOID</td>
+</tr>
+</tbody></table></div>            
+        </section>       
+        <section rel="bibo:Chapter" resource="#list_docs" typeof="bibo:Chapter" class="appendix" id="list_docs">
+          <!--OddPage--><h2 id="h2_list_docs" role="heading"><span class="secno">C. </span>List of Some RDF/RDFa Outreach Documents</h2>
+          <p>(See also <a href="https://www.w3.org/2001/sw/wiki/Books"><abbr title="World Wide Web Consortium">W3C</abbr>’s list on Semantic Web related books</a>.)
+          </p><div><table class="zebra">
+<thead><tr>
+<th title="Field #2">Title</th>
+<th title="Field #3">Targeted sector</th>
+<th title="Field #4">Technical level</th>
+<th title="Field #5">Date created or updated</th>
+<th title="Field #6">Free and open?</th>
+</tr></thead>
+<tbody>
+<tr><td><a href="http://www.w3.org/TR/rdf11-concepts/">RDF 1.1 Concepts and Abstract Syntax</a></td>
+<td>Tech</td>
+<td>High</td>
+<td>2014-02-25</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/TR/rdf11-primer/">RDF 1.1 Primer</a></td>
+<td>General</td>
+<td>Intermediate</td>
+<td>2014-06-24</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/TR/rdfa-primer/">RDFa 1.1 Primer</a></td>
+<td>Tech</td>
+<td>Intermediate</td>
+<td>2014-08-22</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://linkeddatabook.com/editions/1.0/">Linked Data: Evolving the Web into a Global Data Space</a>, Tom Heath and Christian Bizer, Morgan &amp; Claypool Publishers (2011), ISBN: 9781608454310</td>
+<td>Tech</td>
+<td>High</td>
+<td>2011</td>
+<td>Yes, in HTML format</td>
+</tr>
+<tr>
+<td><a href="http://www.worldcat.org/title/semantic-web-primer/oclc/811249469">A Semantic Web Primer, (Third Edition)</a>, Grigoris Antoniou, Paul Groth, Frank van van Harmelen, Rinke Hoekstra ISBN: 0262018284</td>
+<td>Tech</td>
+<td>High</td>
+<td>2012</td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="http://www.worldcat.org/title/semantic-web-for-the-working-ontologist-effective-modeling-in-rdfs-and-owl/oclc/733936673">Semantic Web for the Working Ontologist (2nd ed.)</a>, Dean Allemang and Jim Hendler, Morgan Kaufmann (2011), ISBN: 0123859654</td>
+<td>Tech</td>
+<td>High</td>
+<td> </td>
+<td>No</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/TR/html-data-guide/">HTML Data Guide</a></td>
+<td>Tech</td>
+<td>Intermediate</td>
+<td>2012-03-08</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/TR/cooluris/">Cool URIs for the Semantic Web</a></td>
+<td>Tech</td>
+<td>Intermediate</td>
+<td>2008-12-03</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://www.w3.org/2013/Talks/0902-Lisbon-IH/">Introduction to Linked Open Data</a> (DC2013 Tutorial slide set)</td>
+<td>Tech</td>
+<td>Intermediate/td&gt;
+</td><td>2013</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://en.wikipedia.org/wiki/Resource_Description_Framework">Resource Description Framework, Wikipedia</a></td>
+<td>General</td>
+<td>Somewhat technical</td>
+<td>Varies</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://www.cambridgesemantics.com/semantic-university/rdf-101">RDF101</a> (Cambridge Semantics)</td>
+<td>General</td>
+<td>Beginner</td>
+<td>2012</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://book.freeyourmetadata.org/">Linked Data for Libraries, Archives, and Museums</a>, Seth van Hooland and Ruben Verborgh, Facet Publishing (2014), ISBN: 9781856049641</td>
+<td>Librarians</td>
+<td>Beginner</td>
+<td>2014</td>
+<td>Only Partially</td>
+</tr>
+<tr>
+<td><a href="http://sites.tufts.edu/liam/2014/04/24/version-099/">Linked Archival Metadata: A Guidebook</a> (LiAM Project)</td>
+<td>Archivists/Librarians/CHI/GLAMs</td>
+<td>Beginner</td>
+<td>2014</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://semanticweb.com/introduction-to-rdf_b17953">Introduction to: RDF</a></td>
+<td>C-Suite</td>
+<td>Beginner</td>
+<td>2011</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://www.idealliance.org/videos/Just_Enough_Publish/JustEnough_RDF/index.html">RDF “Just Enough” Video</a> (IDEAlliance)</td>
+<td>Magazines</td>
+<td>Simple</td>
+<td>2014</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="http://rdfa.info/play/">RDFa Tutorial and demo</a></td>
+<td>General</td>
+<td>Beginner/Intermediate</td>
+<td> </td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><a href="webplatform.org">webplatform.org</a></td>
+<td>General</td>
+<td>Beginner/Intermediate</td>
+<td>2012 - </td>
+<td>Yes</td>
+</tr>
+</tbody></table></div>            
+        </section>       
+        <section id="footnotes" class="appendix">
+            <!--OddPage--><h2 id="h2_footnotes" role="heading"><span class="secno">D. </span>
+                Footnotes
+            </h2>
+            <div id="ftn2">
+                <p>
+                    <a class="footnote_sign" href="#_ftnref2" title="" id="_ftn2">1</a> JATS, the Journal Article Tag Suite, and BITS, the Book Interchange Tag Suite—which share a common markup model below the article and chapter level and which have very rich metadata models and mechanisms—are the current versions of what were previously known as the “NLM DTDs,” the markup and metadata model on which virtually all publications, platforms, and services in the area of scholarly publishing are based. This is unique to scholarly publishing: in no other sector is there such universal consensus on a single markup and metadata model.
+                </p>
+            </div>
+        </section>
+    
+
+</body></html>
